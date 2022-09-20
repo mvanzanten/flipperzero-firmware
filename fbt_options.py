@@ -83,7 +83,6 @@ FIRMWARE_APPS = {
         "sentry_safe",
         "subbrute",
         "tetris_game",
-        "wav_player",
         # Debug
         # "debug_apps",
     ],
