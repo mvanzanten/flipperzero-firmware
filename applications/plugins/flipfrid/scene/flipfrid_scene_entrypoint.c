@@ -125,10 +125,6 @@ void flipfrid_scene_entrypoint_on_draw(Canvas* canvas, FlipFridState* context) {
     canvas_clear(canvas);
     canvas_set_color(canvas, ColorBlack);
 
-    // Title
-    //canvas_set_font(canvas, FontPrimary);
-    //canvas_draw_str_aligned(canvas, 32, 2, AlignCenter, AlignTop, "RFID Fuzzer");
-
     if(context->menu_index > FlipFridAttackDefaultValues) {
         canvas_set_font(canvas, FontSecondary);
         canvas_draw_str_aligned(
