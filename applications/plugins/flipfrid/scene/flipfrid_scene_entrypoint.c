@@ -126,8 +126,8 @@ void flipfrid_scene_entrypoint_on_draw(Canvas* canvas, FlipFridState* context) {
     canvas_set_color(canvas, ColorBlack);
 
     // Title
-    canvas_set_font(canvas, FontPrimary);
-    canvas_draw_str_aligned(canvas, 32, 2, AlignCenter, AlignTop, "RFID Fuzzer");
+    //canvas_set_font(canvas, FontPrimary);
+    //canvas_draw_str_aligned(canvas, 32, 2, AlignCenter, AlignTop, "RFID Fuzzer");
 
     if(context->menu_index > FlipFridAttackDefaultValues) {
         canvas_set_font(canvas, FontSecondary);
@@ -159,7 +159,7 @@ void flipfrid_scene_entrypoint_on_draw(Canvas* canvas, FlipFridState* context) {
         canvas_set_font(canvas, FontSecondary);
         canvas_draw_str_aligned(
             canvas,
-            98,
+            64,
             -12,
             AlignCenter,
             AlignTop,
@@ -168,14 +168,22 @@ void flipfrid_scene_entrypoint_on_draw(Canvas* canvas, FlipFridState* context) {
 
     canvas_set_font(canvas, FontPrimary);
     canvas_draw_str_aligned(
-        canvas, 98, 2, AlignCenter, AlignTop, string_get_cstr(menu_proto_items[context->menu_proto_index]));
+        canvas, 34, 4, AlignCenter, AlignTop, "<");
+
+    canvas_set_font(canvas, FontPrimary);
+    canvas_draw_str_aligned(
+        canvas, 64, 4, AlignCenter, AlignTop, string_get_cstr(menu_proto_items[context->menu_proto_index]));
+
+    canvas_set_font(canvas, FontPrimary);
+    canvas_draw_str_aligned(
+        canvas, 94, 4, AlignCenter, AlignTop, ">");
 
     if(context->menu_proto_index < HIDProx) {
         canvas_set_font(canvas, FontSecondary);
         canvas_draw_str_aligned(
             canvas,
-            98,
-            12,
+            64,
+            -12,
             AlignCenter,
             AlignTop,
             string_get_cstr(menu_proto_items[context->menu_proto_index + 1]));
