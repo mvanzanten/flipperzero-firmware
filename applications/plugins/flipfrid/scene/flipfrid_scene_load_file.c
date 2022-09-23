@@ -44,13 +44,20 @@ bool flipfrid_load(FlipFridState* context, const char* file_path) {
                     string_set_str(context->notification_msg, "Unsupported Key type");
                     break;
                 }
-            } else {
+            } else if(context->proto == HIDProx){
                 if(strcmp(string_get_cstr(temp_str), "HIDProx") != 0) {
                     FURI_LOG_E(TAG, "Unsupported Key type");
                     string_reset(context->notification_msg);
                     string_set_str(context->notification_msg, "Unsupported Key type");
                     break;
                 }
+            } else {
+                if(strcmp(string_get_cstr(temp_str), "H10301") != 0) {
+                    FURI_LOG_E(TAG, "Unsupported Key type");
+                    string_reset(context->notification_msg);
+                    string_set_str(context->notification_msg, "Unsupported Key type");
+                    break;
+                }                
             }
         }
 
@@ -70,13 +77,20 @@ bool flipfrid_load(FlipFridState* context, const char* file_path) {
                     string_set_str(context->notification_msg, "Incorrect Key length");
                     break;
                 }
-            } else {
+            } else if(context->proto == HIDProx){
                 if(string_size(context->data_str) != 17) {
                     FURI_LOG_E(TAG, "Incorrect Key length");
                     string_reset(context->notification_msg);
                     string_set_str(context->notification_msg, "Incorrect Key length");
                     break;
                 }
+            } else {
+                if(string_size(context->data_str) != 8) {
+                    FURI_LOG_E(TAG, "Incorrect Key length");
+                    string_reset(context->notification_msg);
+                    string_set_str(context->notification_msg, "Incorrect Key length");
+                    break;
+                }                
             }
 
             // String to uint8_t
