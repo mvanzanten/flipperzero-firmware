@@ -21,11 +21,11 @@
 
 static const uint32_t subghz_frequency_list[] = {
     300000000, 302757000, 303875000, 304250000, 307000000, 307500000, 307800000, 309000000,
-    310000000, 312000000, 312100000, 313000000, 313850000, 314000000, 314350000, 315000000,
-    318000000, 330000000, 345000000, 348000000, 387000000, 390000000, 418000000, 433075000,
-    433220000, 433420000, 433657070, 433889000, 433920000, 434075000, 434176948, 434390000,
-    434420000, 434775000, 438900000, 464000000, 779000000, 868350000, 868400000, 868800000,
-    868950000, 906400000, 915000000, 925000000, 928000000};
+    310000000, 312000000, 312100000, 313000000, 313850000, 314000000, 314350000, 314980000,
+    315000000, 318000000, 330000000, 345000000, 348000000, 387000000, 390000000, 418000000,
+    433075000, 433220000, 433420000, 433657070, 433889000, 433920000, 434075000, 434176948,
+    434390000, 434420000, 434775000, 438900000, 440175000, 464000000, 779000000, 868350000,
+    868400000, 868800000, 868950000, 906400000, 915000000, 925000000, 928000000};
 
 typedef enum {
     SubGhzFrequencyAnalyzerStatusIDLE,
@@ -169,7 +169,7 @@ void subghz_frequency_analyzer_draw(Canvas* canvas, SubGhzFrequencyAnalyzerModel
     // RSSI
     canvas_draw_str(canvas, 33, 62, "RSSI");
     subghz_frequency_analyzer_draw_rssi(
-        canvas, model->rssi, model->rssi_last, model->trigger, 57, 58);
+        canvas, model->rssi, model->rssi_last, model->trigger, 56, 57);
 
     // Last detected frequency
     subghz_frequency_analyzer_history_frequency_draw(canvas, model);
@@ -542,7 +542,7 @@ void subghz_frequency_analyzer_enter(void* context) {
     instance->selected_index = 0;
     instance->max_index = 0;
     instance->show_frame = false;
-    subghz_frequency_analyzer_worker_set_trigger_level(instance->worker, RSSI_MIN);
+    //subghz_frequency_analyzer_worker_set_trigger_level(instance->worker, RSSI_MIN);
 
     with_view_model(
         instance->view,
@@ -638,4 +638,9 @@ SubGHzFrequencyAnalyzerFeedbackLevel subghz_frequency_analyzer_feedback_level(
     }
 
     return instance->feedback_level;
+}
+
+float subghz_frequency_analyzer_get_trigger_level(SubGhzFrequencyAnalyzer* instance) {
+    furi_assert(instance);
+    return subghz_frequency_analyzer_worker_get_trigger_level(instance->worker);
 }

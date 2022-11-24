@@ -5,6 +5,11 @@
 </h3>
 
 ### Welcome to Flipper Zero Unleashed Firmware repo! 
+
+**This firmware is a fork from** [flipperdevices/flipperzero-firmware](https://github.com/flipperdevices/flipperzero-firmware)
+
+<br>
+
 Our goal is to make any features possible in this device without any limitations! 
 
 Please help us implement emulation for all subghz dynamic (rolling code) protocols!
@@ -16,7 +21,7 @@ Please help us implement emulation for all subghz dynamic (rolling code) protoco
 <br>
 Our Discord Community:
 <br>
-<a href="https://discord.unleashedflip.com"><img src="https://discordapp.com/api/guilds/937479784148115456/widget.png?style=banner4" alt="Unofficial Discord Community"></a>
+<a href="https://discord.unleashedflip.com"><img src="https://discordapp.com/api/guilds/937479784148115456/widget.png?style=banner4" alt="Unofficial Discord Community" target="_blank"></a>
 
 <br>
 <br>
@@ -59,14 +64,14 @@ Also check changelog in releases for latest updates!
 - FAAC SLH (Spa) [External seed calculation required (For info contact me in Discord: Nano#8998)] 
 - BFT Mitto [External seed calculation required (For info contact me in Discord: Nano#8998)] 
 - Security+ v1 & v2
-- Star Line (saving only)
+- Star Line
 
-## Support us so we can buy equipment and develop new features
+## Please support development of the project
 * Boosty: https://boosty.to/mmxdev
 * destream (100 EUR min): https://destream.net/live/MMX/donate
 * USDT(TRC20): `TSXcitMSnWXUFqiUfEXrTVpVewXy2cYhrs`
 * BCH: `qquxfyzntuqufy2dx0hrfr4sndp0tucvky4sw8qyu3`
-* ETH/BSC/ERC20-Tokens: `0xFebF1bBc8229418FF2408C07AF6Afa49152fEc6a`
+* ETH/BSC/ERC20-Tokens: `darkflippers.eth` (or `0xFebF1bBc8229418FF2408C07AF6Afa49152fEc6a`)
 * BTC: `bc1q0np836jk9jwr4dd7p6qv66d04vamtqkxrecck9`
 * DOGE: `D6R6gYgBn5LwTNmPyvAQR6bZ9EtGgFCpvv`
 * LTC: `ltc1q3ex4ejkl0xpx3znwrmth4lyuadr5qgv8tmq8z9`
@@ -100,6 +105,7 @@ Also check changelog in releases for latest updates!
 - DHT11/22 Temp. Sensor Monitor [(by quen0n)](https://github.com/quen0n/FipperZero-DHT-Monitor) - How to connect -> (5V -> VCC) / (GND -> GND) / (Selected Pin -> out)
 - BH1750 - Lightmeter [(by oleksiikutuzov)](https://github.com/oleksiikutuzov/flipperzero-lightmeter)
 - iButton Fuzzer [(by xMasterX)](https://github.com/xMasterX/ibutton-fuzzer)
+- HEX Viewer [(by QtRoS)](https://github.com/QtRoS/flipperzero-firmware)
 
 Games:
 - DOOM (fixed) [(by p4nic4ttack)](https://github.com/p4nic4ttack/doom-flipper-zero/)
@@ -111,6 +117,8 @@ Games:
 - Minesweeper [(by panki27)](https://github.com/panki27/minesweeper)
 - Heap Defence (aka Stack Attack) - Ported to latest firmware by @xMasterX - [(original by wquinoa & Vedmein)](https://github.com/Vedmein/flipperzero-firmware/tree/hd/svisto-perdelki)
 - Game15 [(by x27)](https://github.com/x27/flipperzero-game15)
+- Solitaire [(by teeebor)](https://github.com/teeebor/flipper_games)
+- BlackJack [(by teeebor)](https://github.com/teeebor/flipper_games)
 
 ### Other changes
 
