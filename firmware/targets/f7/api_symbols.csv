@@ -1,5 +1,5 @@
 entry,status,name,type,params
-Version,+,8.11,,
+Version,+,11.1,,
 Header,+,applications/services/bt/bt_service/bt.h,,
 Header,+,applications/services/cli/cli.h,,
 Header,+,applications/services/cli/cli_vcp.h,,
@@ -30,6 +30,7 @@ Header,+,applications/services/gui/view_dispatcher.h,,
 Header,+,applications/services/gui/view_stack.h,,
 Header,+,applications/services/input/input.h,,
 Header,+,applications/services/loader/loader.h,,
+Header,+,applications/services/locale/locale.h,,
 Header,+,applications/services/notification/notification.h,,
 Header,+,applications/services/notification/notification_messages.h,,
 Header,+,applications/services/power/power_service/power.h,,
@@ -825,14 +826,14 @@ Function,-,fgetpos,int,"FILE*, fpos_t*"
 Function,-,fgets,char*,"char*, int, FILE*"
 Function,-,fgets_unlocked,char*,"char*, int, FILE*"
 Function,+,file_browser_alloc,FileBrowser*,FuriString*
-Function,+,file_browser_configure,void,"FileBrowser*, const char*, _Bool, const Icon*, _Bool"
+Function,+,file_browser_configure,void,"FileBrowser*, const char*, const char*, _Bool, _Bool, const Icon*, _Bool"
 Function,+,file_browser_free,void,FileBrowser*
 Function,+,file_browser_get_view,View*,FileBrowser*
 Function,+,file_browser_set_callback,void,"FileBrowser*, FileBrowserCallback, void*"
 Function,+,file_browser_set_item_callback,void,"FileBrowser*, FileBrowserLoadItemCallback, void*"
 Function,+,file_browser_start,void,"FileBrowser*, FuriString*"
 Function,+,file_browser_stop,void,FileBrowser*
-Function,+,file_browser_worker_alloc,BrowserWorker*,"FuriString*, const char*, _Bool"
+Function,+,file_browser_worker_alloc,BrowserWorker*,"FuriString*, const char*, const char*, _Bool, _Bool"
 Function,+,file_browser_worker_folder_enter,void,"BrowserWorker*, FuriString*, int32_t"
 Function,+,file_browser_worker_folder_exit,void,BrowserWorker*
 Function,+,file_browser_worker_folder_refresh,void,"BrowserWorker*, int32_t"
@@ -840,7 +841,7 @@ Function,+,file_browser_worker_free,void,BrowserWorker*
 Function,+,file_browser_worker_is_in_start_folder,_Bool,BrowserWorker*
 Function,+,file_browser_worker_load,void,"BrowserWorker*, uint32_t, uint32_t"
 Function,+,file_browser_worker_set_callback_context,void,"BrowserWorker*, void*"
-Function,+,file_browser_worker_set_config,void,"BrowserWorker*, FuriString*, const char*, _Bool"
+Function,+,file_browser_worker_set_config,void,"BrowserWorker*, FuriString*, const char*, _Bool, _Bool"
 Function,+,file_browser_worker_set_folder_callback,void,"BrowserWorker*, BrowserWorkerFolderOpenCallback"
 Function,+,file_browser_worker_set_item_callback,void,"BrowserWorker*, BrowserWorkerListItemCallback"
 Function,+,file_browser_worker_set_list_callback,void,"BrowserWorker*, BrowserWorkerListLoadCallback"
@@ -1213,6 +1214,7 @@ Function,+,furi_hal_power_enable_external_3_3v,void,
 Function,+,furi_hal_power_enable_otg,void,
 Function,+,furi_hal_power_gauge_is_ok,_Bool,
 Function,+,furi_hal_power_get_bat_health_pct,uint8_t,
+Function,+,furi_hal_power_get_battery_charging_voltage,float,
 Function,+,furi_hal_power_get_battery_current,float,FuriHalPowerIC
 Function,+,furi_hal_power_get_battery_design_capacity,uint32_t,
 Function,+,furi_hal_power_get_battery_full_capacity,uint32_t,
@@ -1231,6 +1233,7 @@ Function,+,furi_hal_power_is_charging_done,_Bool,
 Function,+,furi_hal_power_is_otg_enabled,_Bool,
 Function,+,furi_hal_power_off,void,
 Function,+,furi_hal_power_reset,void,
+Function,+,furi_hal_power_set_battery_charging_voltage,void,float
 Function,+,furi_hal_power_shutdown,void,
 Function,+,furi_hal_power_sleep,void,
 Function,+,furi_hal_power_sleep_available,_Bool,
@@ -1281,6 +1284,9 @@ Function,+,furi_hal_rtc_get_boot_mode,FuriHalRtcBootMode,
 Function,+,furi_hal_rtc_get_datetime,void,FuriHalRtcDateTime*
 Function,+,furi_hal_rtc_get_fault_data,uint32_t,
 Function,+,furi_hal_rtc_get_heap_track_mode,FuriHalRtcHeapTrackMode,
+Function,+,furi_hal_rtc_get_locale_dateformat,FuriHalRtcLocaleDateFormat,
+Function,+,furi_hal_rtc_get_locale_timeformat,FuriHalRtcLocaleTimeFormat,
+Function,+,furi_hal_rtc_get_locale_units,FuriHalRtcLocaleUnits,
 Function,+,furi_hal_rtc_get_log_level,uint8_t,
 Function,+,furi_hal_rtc_get_pin_fails,uint32_t,
 Function,+,furi_hal_rtc_get_register,uint32_t,FuriHalRtcRegister
@@ -1294,11 +1300,18 @@ Function,+,furi_hal_rtc_set_datetime,void,FuriHalRtcDateTime*
 Function,+,furi_hal_rtc_set_fault_data,void,uint32_t
 Function,+,furi_hal_rtc_set_flag,void,FuriHalRtcFlag
 Function,+,furi_hal_rtc_set_heap_track_mode,void,FuriHalRtcHeapTrackMode
+Function,+,furi_hal_rtc_set_locale_dateformat,void,FuriHalRtcLocaleDateFormat
+Function,+,furi_hal_rtc_set_locale_timeformat,void,FuriHalRtcLocaleTimeFormat
+Function,+,furi_hal_rtc_set_locale_units,void,FuriHalRtcLocaleUnits
 Function,+,furi_hal_rtc_set_log_level,void,uint8_t
 Function,+,furi_hal_rtc_set_pin_fails,void,uint32_t
 Function,+,furi_hal_rtc_set_register,void,"FuriHalRtcRegister, uint32_t"
 Function,+,furi_hal_rtc_validate_datetime,_Bool,FuriHalRtcDateTime*
+Function,+,furi_hal_speaker_acquire,_Bool,uint32_t
+Function,-,furi_hal_speaker_deinit,void,
 Function,-,furi_hal_speaker_init,void,
+Function,+,furi_hal_speaker_is_mine,_Bool,
+Function,+,furi_hal_speaker_release,void,
 Function,+,furi_hal_speaker_set_volume,void,float
 Function,+,furi_hal_speaker_start,void,"float, float"
 Function,+,furi_hal_speaker_stop,void,
@@ -1333,6 +1346,7 @@ Function,+,furi_hal_subghz_read_packet,void,"uint8_t*, uint8_t*"
 Function,+,furi_hal_subghz_reset,void,
 Function,+,furi_hal_subghz_rx,void,
 Function,+,furi_hal_subghz_rx_pipe_not_empty,_Bool,
+Function,+,furi_hal_subghz_set_async_mirror_pin,void,const GpioPin*
 Function,+,furi_hal_subghz_set_frequency,uint32_t,uint32_t
 Function,+,furi_hal_subghz_set_frequency_and_path,uint32_t,uint32_t
 Function,+,furi_hal_subghz_set_path,void,FuriHalSubGhzPath
@@ -1750,6 +1764,16 @@ Function,+,loader_update_menu,void,
 Function,+,loading_alloc,Loading*,
 Function,+,loading_free,void,Loading*
 Function,+,loading_get_view,View*,Loading*
+Function,+,locale_celsius_to_fahrenheit,float,float
+Function,+,locale_fahrenheit_to_celsius,float,float
+Function,+,locale_format_date,void,"FuriString*, const FuriHalRtcDateTime*, const LocaleDateFormat, const char*"
+Function,+,locale_format_time,void,"FuriString*, const FuriHalRtcDateTime*, const LocaleTimeFormat, const _Bool"
+Function,+,locale_get_date_format,LocaleDateFormat,
+Function,+,locale_get_measurement_unit,LocaleMeasurementUnits,
+Function,+,locale_get_time_format,LocaleTimeFormat,
+Function,+,locale_set_date_format,void,LocaleDateFormat
+Function,+,locale_set_measurement_unit,void,LocaleMeasurementUnits
+Function,+,locale_set_time_format,void,LocaleTimeFormat
 Function,-,localtime,tm*,const time_t*
 Function,-,localtime_r,tm*,"const time_t*, tm*"
 Function,-,log,double,double
@@ -2307,6 +2331,7 @@ Function,+,rpc_session_set_context,void,"RpcSession*, void*"
 Function,+,rpc_session_set_send_bytes_callback,void,"RpcSession*, RpcSendBytesCallback"
 Function,+,rpc_session_set_terminated_callback,void,"RpcSession*, RpcSessionTerminatedCallback"
 Function,+,rpc_system_app_confirm,void,"RpcAppSystem*, RpcAppSystemEvent, _Bool"
+Function,+,rpc_system_app_error_reset,void,RpcAppSystem*
 Function,+,rpc_system_app_exchange_data,void,"RpcAppSystem*, const uint8_t*, size_t"
 Function,+,rpc_system_app_get_data,const char*,RpcAppSystem*
 Function,+,rpc_system_app_send_exited,void,RpcAppSystem*
@@ -2827,6 +2852,14 @@ Function,-,subghz_protocol_decoder_secplus_v2_get_hash_data,uint8_t,void*
 Function,-,subghz_protocol_decoder_secplus_v2_get_string,void,"void*, FuriString*"
 Function,-,subghz_protocol_decoder_secplus_v2_reset,void,void*
 Function,-,subghz_protocol_decoder_secplus_v2_serialize,_Bool,"void*, FlipperFormat*, SubGhzRadioPreset*"
+Function,-,subghz_protocol_decoder_smc5326_alloc,void*,SubGhzEnvironment*
+Function,-,subghz_protocol_decoder_smc5326_deserialize,_Bool,"void*, FlipperFormat*"
+Function,-,subghz_protocol_decoder_smc5326_feed,void,"void*, _Bool, uint32_t"
+Function,-,subghz_protocol_decoder_smc5326_free,void,void*
+Function,-,subghz_protocol_decoder_smc5326_get_hash_data,uint8_t,void*
+Function,-,subghz_protocol_decoder_smc5326_get_string,void,"void*, FuriString*"
+Function,-,subghz_protocol_decoder_smc5326_reset,void,void*
+Function,-,subghz_protocol_decoder_smc5326_serialize,_Bool,"void*, FlipperFormat*, SubGhzRadioPreset*"
 Function,-,subghz_protocol_decoder_somfy_keytis_alloc,void*,SubGhzEnvironment*
 Function,-,subghz_protocol_decoder_somfy_keytis_deserialize,_Bool,"void*, FlipperFormat*"
 Function,-,subghz_protocol_decoder_somfy_keytis_feed,void,"void*, _Bool, uint32_t"
@@ -2997,6 +3030,11 @@ Function,-,subghz_protocol_encoder_secplus_v2_deserialize,_Bool,"void*, FlipperF
 Function,-,subghz_protocol_encoder_secplus_v2_free,void,void*
 Function,-,subghz_protocol_encoder_secplus_v2_stop,void,void*
 Function,-,subghz_protocol_encoder_secplus_v2_yield,LevelDuration,void*
+Function,-,subghz_protocol_encoder_smc5326_alloc,void*,SubGhzEnvironment*
+Function,-,subghz_protocol_encoder_smc5326_deserialize,_Bool,"void*, FlipperFormat*"
+Function,-,subghz_protocol_encoder_smc5326_free,void,void*
+Function,-,subghz_protocol_encoder_smc5326_stop,void,void*
+Function,-,subghz_protocol_encoder_smc5326_yield,LevelDuration,void*
 Function,-,subghz_protocol_encoder_star_line_alloc,void*,SubGhzEnvironment*
 Function,-,subghz_protocol_encoder_star_line_deserialize,_Bool,"void*, FlipperFormat*"
 Function,-,subghz_protocol_encoder_star_line_free,void,void*
@@ -3041,7 +3079,7 @@ Function,+,subghz_setting_get_preset_data,uint8_t*,"SubGhzSetting*, size_t"
 Function,+,subghz_setting_get_preset_data_by_name,uint8_t*,"SubGhzSetting*, const char*"
 Function,+,subghz_setting_get_preset_data_size,size_t,"SubGhzSetting*, size_t"
 Function,+,subghz_setting_get_preset_name,const char*,"SubGhzSetting*, size_t"
-Function,+,subghz_setting_load,void,"SubGhzSetting*, const char*, _Bool"
+Function,+,subghz_setting_load,void,"SubGhzSetting*, const char*"
 Function,+,subghz_setting_load_custom_preset,_Bool,"SubGhzSetting*, const char*, FlipperFormat*"
 Function,+,subghz_setting_set_default_frequency,void,"SubGhzSetting*, uint32_t"
 Function,+,subghz_transmitter_alloc_init,SubGhzTransmitter*,"SubGhzEnvironment*, const char*"
@@ -4817,6 +4855,9 @@ Variable,-,subghz_protocol_secplus_v1_encoder,const SubGhzProtocolEncoder,
 Variable,-,subghz_protocol_secplus_v2,const SubGhzProtocol,
 Variable,-,subghz_protocol_secplus_v2_decoder,const SubGhzProtocolDecoder,
 Variable,-,subghz_protocol_secplus_v2_encoder,const SubGhzProtocolEncoder,
+Variable,-,subghz_protocol_smc5326,const SubGhzProtocol,
+Variable,-,subghz_protocol_smc5326_decoder,const SubGhzProtocolDecoder,
+Variable,-,subghz_protocol_smc5326_encoder,const SubGhzProtocolEncoder,
 Variable,-,subghz_protocol_somfy_keytis,const SubGhzProtocol,
 Variable,-,subghz_protocol_somfy_keytis_decoder,const SubGhzProtocolDecoder,
 Variable,-,subghz_protocol_somfy_keytis_encoder,const SubGhzProtocolEncoder,

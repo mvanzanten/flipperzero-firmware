@@ -27,6 +27,12 @@ Our Discord Community:
 <br>
 <br>
 
+## Dev builds
+- https://dev.unleashedflip.com/
+- https://t.me/kotnehleb
+## Releases in Telegram
+- https://t.me/unleashed_fw
+
 # What's changed
 * SubGHz regional TX restrictions removed
 * SubGHz frequency range can be extended in settings file (Warning: It can damage flipper's hardware)
@@ -68,8 +74,10 @@ Also check changelog in releases for latest updates!
 
 ## Please support development of the project
 * Boosty: https://boosty.to/mmxdev
+* Ko-Fi: https://ko-fi.com/masterx
 * destream (100 EUR min): https://destream.net/live/MMX/donate
 * cloudtips (only RU payments accepted): https://pay.cloudtips.ru/p/7b3e9d65
+* YooMoney (only RU payments accepted): https://yoomoney.ru/fundraise/XA49mgQLPA0.221209
 * USDT(TRC20): `TSXcitMSnWXUFqiUfEXrTVpVewXy2cYhrs`
 * BCH: `qquxfyzntuqufy2dx0hrfr4sndp0tucvky4sw8qyu3`
 * ETH/BSC/ERC20-Tokens: `darkflippers.eth` (or `0xFebF1bBc8229418FF2408C07AF6Afa49152fEc6a`)
@@ -77,11 +85,12 @@ Also check changelog in releases for latest updates!
 * DOGE: `D6R6gYgBn5LwTNmPyvAQR6bZ9EtGgFCpvv`
 * LTC: `ltc1q3ex4ejkl0xpx3znwrmth4lyuadr5qgv8tmq8z9`
 * XMR (Monero): `41xUz92suUu1u5Mu4qkrcs52gtfpu9rnZRdBpCJ244KRHf6xXSvVFevdf2cnjS7RAeYr5hn9MsEfxKoFDRSctFjG5fv1Mhn`
+* TON: `EQCOqcnYkvzOZUV_9bPE_8oTbOrOF03MnF-VcJyjisTZmpGf`
 
 ### Community apps included:
 
 - RFID Fuzzer plugin [(by Ganapati & @xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/pull/54) & New protocols by @mvanzanten
-- Sub-GHz bruteforce plugin [(by @derskythe & xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/pull/57) (original by Ganapati)
+- Sub-GHz bruteforce plugin [(by @derskythe & xMasterX)](https://github.com/derskythe/flipperzero-subbrute) [(original by Ganapati & xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/pull/57)
 - Sub-GHz playlist plugin [(by darmiel)](https://github.com/DarkFlippers/unleashed-firmware/pull/62)
 - ESP8266 Deauther plugin [(by SequoiaSan)](https://github.com/SequoiaSan/FlipperZero-Wifi-ESP8266-Deauther-Module)
 - WiFi Scanner plugin [(by SequoiaSan)](https://github.com/SequoiaSan/FlipperZero-WiFi-Scanner_Module)
@@ -103,11 +112,11 @@ Also check changelog in releases for latest updates!
 - Temperature Sensor Plugin - HTU2xD, SHT2x, SI702x, SI700x, SI701x, AM2320 [(by Mywk)](https://github.com/Mywk/FlipperTemperatureSensor) - [How to Connect](https://github.com/DarkFlippers/unleashed-firmware/blob/dev/applications/plugins/htu21d_temp_sensor/Readme.md)
 - HC-SR04 Distance sensor - Ported and modified by @xMasterX [(original by Sanqui)](https://github.com/Sanqui/flipperzero-firmware/tree/hc_sr04) - How to connect -> (5V -> VCC) / (GND -> GND) / (13|TX -> Trig) / (14|RX -> Echo)
 - Morse Code [(by wh00hw)](https://github.com/wh00hw/MorseCodeFAP)
-- AM2320/AM2321 Temp. Sensor plugin [(by xMasterX)](https://github.com/xMasterX/AM2320_Flipper_Plugin) - [How to Connect](https://github.com/xMasterX/AM2320_Flipper_Plugin)
-- DHT11/22 Temp. Sensor Monitor [(by quen0n)](https://github.com/quen0n/FipperZero-DHT-Monitor) - How to connect -> (5V -> VCC) / (GND -> GND) / (Selected Pin -> out)
+- (UniTemp) Temp sensor reader [(by quen0n)](https://github.com/quen0n/unitemp-flipperzero)
 - BH1750 - Lightmeter [(by oleksiikutuzov)](https://github.com/oleksiikutuzov/flipperzero-lightmeter)
 - iButton Fuzzer [(by xMasterX)](https://github.com/xMasterX/ibutton-fuzzer)
 - HEX Viewer [(by QtRoS)](https://github.com/QtRoS/flipper-zero-hex-viewer)
+- POCSAG Pager [(by xMasterX & Shmuma)](https://github.com/xMasterX/flipper-pager)
 
 Games:
 - DOOM (fixed) [(by p4nic4ttack)](https://github.com/p4nic4ttack/doom-flipper-zero/)
@@ -127,7 +136,7 @@ Games:
 - BadUSB -> Keyboard layouts [(by rien > dummy-decoy)](https://github.com/dummy-decoy/flipperzero-firmware/tree/dummy_decoy/bad_usb_keyboard_layout)
 - SubGHz -> New frequency analyzer - [(by ClusterM)](https://github.com/DarkFlippers/unleashed-firmware/pull/43)
 - SubGHz -> Detect RAW feature - [(by perspecdev)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/152)
-- SubGHz -> Save last used frequency and modulation [(by derskythe)](https://github.com/DarkFlippers/unleashed-firmware/pull/77)
+- SubGHz -> Save last used frequency [(by derskythe)](https://github.com/DarkFlippers/unleashed-firmware/pull/77)
 - SubGHz -> Press OK in frequency analyzer to use detected frequency in Read modes [(by derskythe)](https://github.com/DarkFlippers/unleashed-firmware/pull/77)
 - SubGHz -> Long press OK button in SubGHz Frequency analyzer to switch to Read menu [(by derskythe)](https://github.com/DarkFlippers/unleashed-firmware/pull/79)
 - Lock device with pin(or regular lock if pin not set) by holding UP button on main screen [(by an4tur0r)](https://github.com/DarkFlippers/unleashed-firmware/pull/107)
