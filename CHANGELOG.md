@@ -1,50 +1,9 @@
 ### New changes
-* CI/CD: Builds with extra apps pack included, see new option below
-* SubGHz: Allow manual creation of Nice Flor S, Nice Smilo
-* LF RFID: Allow removing password from T5577 to make it operational (PR #225 | by @TQMatvey & Tobirg (grvpvl))
-* Plugins -> Barcode Generator: Save last used barcode, and load on app start
-* Plugins -> Barcode Generator: Add EAN-13 support (PR #234 | by @gid9798)
-* Plugins -> Arkanoid: Fix bug with unability to continue game after first level
-* Plugins -> Morse Code: Fixed crashes, fixed known issues (PR #249 | by @gid9798)
-* Plugins -> USB Keyboard & Mouse: Added ESCAPE key (PR #243 | by @huuck)
-* Plugins -> USB Keyboard & Mouse: Added Delete key
-* Plugins -> SubGHz Bruteforcer: Add holtek HT12X protocol support
-* Plugins -> POCSAG Pager: Fix UI bug
-* Plugins -> Wifi Marauder: Enable +5volt on plugin start, to allow usage with custom boards
-* Plugins: Add 2048 Game (PR #233 | by @eugene-kirzhanov)
-* Plugins: Update TOTP, UniTemp, Wifi marauder to latest commits from their repo's
-* Infrared: Universal remote assets updates (by @amec0e | PRs #246 #242)
-* Readme fixes (PR #247 | by @Kavitate)
-* New Year update slideshow (by @Svaarich)
-* Show OTP flipper region on debug and about screens
-* OFW: Add float_tools to SDK api
-* OFW: Gui: change data ownership model in submenu, own text by default 
-* OFW: Gui: Direct Draw API
-* OFW: Mifare dictionary attack performance improvements.
-* OFW: SubGhz: CAME 12 bit encoder fix guard time
-* OFW: Fix MFC bruteforce progress bar 
-* OFW: Docs and readme's updates
-* OFW: Picopass read bug fixes
-* OFW: OpenOCD scripts
-* OFW: New MFC Bruteforce animation
-* OFW: File browser: Empty folder label
-* OFW: SubGhz: add Holtek_ht12x protocol
-* OFW: USB/BLE HID Remote icon fix
-* OFW: Fix quoted error for macOS bad-usb
-* OFW: Modules: locking view model
-* OFW: Fix PVS-Studio warnings 
-* OFW: Fix unit tests
-* OFW: WeatherStation: fix incorrect history index increment
-* OFW: File format docs: RFID, iButton, BadUSB
-* OFW: SubGhz: fix start navigation
-* OFW: iButton: fixed notification on successful read 
-* OFW: Archive browser delete fix
-* OFW: Fixes: correct scrolling text
-* OFW: SubGhz: fix Hormann HSM
-* OFW: Rework BLE key storage
-* OFW: Gui: scrollable long file names in FileBrowser and Archive Browser
-* OFW: Untangle NFC_APP_FOLDER from nfc_device
-* OFW: WS: add choice fahrenheit/celsius (can be set from flipper settings -> system)
+* SubGHz: **Somfy Keytis Encoder** and Somfy Telis fixes (PR #297 | by @assasinfil)
+* SubGHz: Change hopping frequency list to have only most used frequencies
+* SubGHz: Block usage of hopping with detect raw at same time (its efficiency is almost 0, it looses signals and all that you can capture is a micro part of end of the signal) (Detect raw also will be removed in a future (and replaced with more correct solution))
+* Plugins -> Updated **ProtoView** [(by antirez)](https://github.com/antirez/protoview)
+* Infrared: Update universal remote assets (by @amec0e) (PR #298)
 
 #### [🎲 Download latest extra apps pack](https://download-directory.github.io/?url=https://github.com/xMasterX/unleashed-extra-pack/tree/main/apps)
 
@@ -55,7 +14,6 @@
 ## Please support development of the project
 * Boosty: https://boosty.to/mmxdev
 * Ko-Fi: https://ko-fi.com/masterx
-* destream (100 EUR min): https://destream.net/live/MMX/donate
 * cloudtips (only RU payments accepted): https://pay.cloudtips.ru/p/7b3e9d65
 * YooMoney (only RU payments accepted): https://yoomoney.ru/fundraise/XA49mgQLPA0.221209
 * USDT(TRC20): `TSXcitMSnWXUFqiUfEXrTVpVewXy2cYhrs`
